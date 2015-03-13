@@ -13,16 +13,21 @@ Set objShell = createobject("wscript.shell")
 'Enumerate Container
 EnumerateUsers oContainer
 
+
 'Clean up
 OutPutFile.Close
 Set FileSystem = Nothing
 Set oContainer = Nothing
 
 
+
 WScript.Echo "Finished"
 WScript.Quit(0)
+
+
 Sub EnumerateUsers(oCont)
 Dim oUser
+
 For Each oUser In oCont
 Select Case LCase(oUser.Class)
 Case "computer"
@@ -39,12 +44,15 @@ Do While Not objExecObj.StdOut.AtEndOfStream
 	end if
 Loop
 
-'IPs;"Hostname";"FQDNs";"Description";"Asset Value";"Operating System";"Latitude";"Longitude";"Host ID";"External Asset";"Device Type"
-OutPutFile.WriteLine strhost & ";" & oName & ";"
+'Header: "IPs";"Hostname";"FQDNs";"Description";"Asset Value";"Operating System";"Latitude";"Longitude";"Host ID";"External Asset";"Device Type"
+'OutPutFile.WriteLine "|IPs|;|Hostname|;|FQDNs|;|Description|;|Asset Value|;|Operating System|;|Latitude|;|Longitude|;|Host ID|;|External Asset|;|Device Type|"
+
+OutPutFile.WriteLine "|" & strhost & "|" & ";" & "|" & oName & "|" & ";" & "|" & "" & "|" & ";" & "|" & "" & "|" & ";" & "|" & "2" & "|" & ";" & "|" & "Windows" & "|" & ";" & "|" & "" & "|" & ";" & "|" & "" & "|" & ";" & "|" & "" & "|" & ";" & "|" & "" & "|" & ";" & "|" & "" & "|" 
 'WScript.Echo oName
 'Wscript.echo strhost
 
 End If
+
 
 
 Case "organizationalunit" , "container"
