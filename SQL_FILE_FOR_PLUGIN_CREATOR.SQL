@@ -4,6 +4,7 @@ strPlugNm = InputBox("Enter Plugin Name All Lower Case No Spaces (cisco_pix)")
 strVend = InputBox("Enter Vendor Name (Cisco)")
 strMod = InputBox("Enter Model Name (SG500X)")
 strVer = InputBox("Enter Version (Can be blank)")
+strDevId= InputBox("Enter Device ID: 10=firewall,22=proxy,24=router/switch,3=Anti Virus,13=IDS,14=IPS,16=mail server,8=database,28=vulnerability scanner,29=web server,30=WiFi IDS,11=honeypot,20=server,15=SPAM/mail,27=VPN ,6=DHCP")
 Set oFSO = CreateObject("scripting.filesystemobject")
 
 Set oTF = oFSO.OpenTextFile("C:\sidname.txt", 1)
@@ -13,7 +14,7 @@ rTF.WriteLine("DELETE FROM plugin_sid where plugin_id = '" & strPlug & "';")
 rTF.WriteLine("DELETE FROM software_cpe where plugin = '" & strPlugNm & ":" & strPlug & "';")
 
 rTF.WriteLine("INSERT IGNORE INTO software_cpe (cpe, name, version, line, vendor, plugin) VALUES ('cpe:/o:" & strVend & ":" & strMod & ":" & strVer & "','" & strMod & "','" & strVer & "','','" & StrVend & "', '" & strPlugNm & ":" & strPlug & "');")
-rTF.WriteLine("INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES (" & strPlug & ", 1, '" & strPlugNm & "', '" & strPlugNm & "', '24', '" & strVend & "');")
+rTF.WriteLine("INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES (" & strPlug & ", 1, '" & strPlugNm & "', '" & strPlugNm & "', '" & strDevId & "', '" & strVend & "');")
 
 Do While oTF.AtEndOfStream <> True
 sLine = oTF.ReadLine
