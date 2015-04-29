@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<directive id="500004" name="Websense - Attempted to access malicious website" priority="3">
+   <rule type="detector" name="Websense Category Detection" from="ANY" to="ANY" port_from="ANY" port_to="ANY" reliability="0" occurrence="1" plugin_id="19004" plugin_sid="128,205,206,10128,10205,10206">
+      <rules>
+         <rule type="detector" name="Websense Category Detection" from="1:SRC_IP" to="ANY" port_from="ANY" port_to="ANY" reliability="3" occurrence="5" time_out="60" plugin_id="19004" plugin_sid="1:PLUGIN_SID">
+            <rules>
+               <rule type="detector" name="Websense Category Detection" from="1:SRC_IP" to="ANY" port_from="ANY" port_to="ANY" reliability="10" occurrence="10000" time_out="86400" plugin_id="19004" plugin_sid="1:PLUGIN_SID"/>
+            </rules>
+         </rule>
+      </rules>
+   </rule>
+</directive>
+ 
+<directive id="500011" name="Websense - Accessed category that should have been blocked" priority="3">
+   <rule type="detector" name="Websense Category Detection" from="ANY" to="ANY" port_from="ANY" port_to="ANY" reliability="10" occurrence="1" plugin_id="19004" plugin_sid="212,66,67,95,100,115,152,1,15,19,22,24,26,64,65">
+      <rules>
+         <rule type="detector" name="Websense Category Detection" from="1:SRC_IP" to="ANY" port_from="ANY" port_to="ANY" reliability="10" occurrence="10000" time_out="86400" plugin_id="19004" plugin_sid="1:PLUGIN_SID"/>
+      </rules>
+   </rule>
+</directive>
