@@ -1,4 +1,4 @@
-create a sid.txt file containing #,event name,sid  such as
+create a sid.txt file containing #,event name,sid  such as:
 
 1,http-proxy,11
 2,https-proxy,18
