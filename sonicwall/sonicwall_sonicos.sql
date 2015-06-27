@@ -8,12 +8,6 @@ INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) V
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 1226, 3, 1, 'SonicWall: HTTPS Handshake');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 1232, 3, 1, 'SonicWall: NTP Request sent');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 1233, 3, 1, 'SonicWall: Unhandled link-local or multicast IPv6 packet dropped');
-INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 265, 3, 1, 'SonicWall: User logged out - inactivity timer expired');
-INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 34, 3, 1, 'SonicWall: Login screen timed out');
-INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 537, 3, 1, 'SonicWall: Connection Closed');
-INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 608, 3, 1, 'SonicWall: IPS Detection Alert:');
-INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 82, 3, 1, 'SonicWall: Possible port scan detected');
-INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 98, 3, 1, 'SonicWall: Connection Opened');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 97, 3, 1, 'SonicWall: Web site hit');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 171, 3, 1, 'SonicWall: dynamic');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 826, 3, 1, 'SonicWall: dynamic');
