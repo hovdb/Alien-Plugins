@@ -13,7 +13,6 @@ INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) V
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 537, 3, 1, 'SonicWall: Connection Closed');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 608, 3, 1, 'SonicWall: IPS Detection Alert:');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 82, 3, 1, 'SonicWall: Possible port scan detected');
-INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 97, 3, 1, 'SonicWall: Web site hit');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 98, 3, 1, 'SonicWall: Connection Opened');
 
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 97, 3, 1, 'SonicWall: Web site hit');
