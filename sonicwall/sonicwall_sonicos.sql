@@ -1,8 +1,8 @@
 DELETE FROM plugin WHERE id = '9300';
 DELETE FROM plugin_sid where plugin_id = '9300';
 DELETE FROM software_cpe where plugin = 'sonicwall_sonicos:9300';
-INSERT IGNORE INTO software_cpe (cpe, name, version, line, vendor, plugin) VALUES ('cpe:/o:SonicWall:SonicOS:5.9.1.0-22o','SonicOS','5.9.1.0-22o','','SonicWall','sonicwall_sonicos:9300');
-INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES ('9300',1,'sonicwall_sonicos','sonicwall_sonicos','10','SonicWall');
+INSERT IGNORE INTO software_cpe (cpe, name, version, line, vendor, plugin) VALUES ('cpe:/o:SonicWall:SonicOS:5.9.1.0-22o','SonicWall','SonicOS','','Dell','sonicwall_sonicos:9300');
+INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES ('9300',1,'sonicwall_sonicos','SonicWall','10','Dell');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 1154, 3, 1, 'SonicWall: Application Control Detection Alert');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 1155, 3, 1, 'SonicWall: Application Control Prevention Alert');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9300, 1226, 3, 1, 'SonicWall: HTTPS Handshake');
