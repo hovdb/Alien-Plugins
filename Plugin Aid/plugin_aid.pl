@@ -58,7 +58,7 @@ foreach my $line (@text) {
 	}
 	$message =~ s/\.//g;
 	$message =~ s/^\ //;
-	$message2 = $strVend .'-'. $strMod .': ' . $message;
+	$message2 = $strVend $strMod . $message;
 	$sid = hex($code);
 	printf $sql_out, $sid, $priority, $message;
 	
