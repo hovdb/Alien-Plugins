@@ -59,13 +59,13 @@ foreach my $line (@text) {
 	}
 	$message =~ s/\.//g;
 	$message =~ s/^\ //;
-	$message2 = $strVend . - . $strMod . : . $message;
+	$message2 = $strVend . '-' . $strMod . ': ' . $message;
 	$sid = hex($code);
 	printf $sql_out, $sid, $priority, $message;
 	
 	#This plugin needs a translate table, going to do that in this loop
 	$translate_table .= "$message=$code\n";
-	$sido .= "INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES ($plugin_id, $code, $default_r, 1, '$message2');\n";
+	$sido .= "INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES ($strplug, $code, $default_r, 1, '$message2');\n";
 }
 #print $translate_table;
 
