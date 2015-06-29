@@ -38,7 +38,7 @@ my %pri_hash = ( 'Severe' => 5, 'Informational' => 1, 'Warning' => 3);
 
 $datestring = localtime();
 
-my $sql_out = "INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES ($strplug, %s, $default_r, %s, '%s');\n";
+#my $sql_out = "INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES ($strplug, %s, $default_r, %s, '%s');\n";
 #Print Header
 print "DELETE FROM plugin WHERE id = '$strplug';\n";
 print "DELETE FROM plugin_sid where plugin_id = '$strplug';\n";
@@ -100,7 +100,7 @@ startup=
 shutdown=
 
 
-print $translate_table;
+$translate_table;
 
 EOF
 }
