@@ -68,6 +68,7 @@ foreach my $line (@text) {
 }
 #print $translate_table;
 
+
 print $sido;
 
 sub make_plugin () {
