@@ -44,7 +44,7 @@ print "DELETE FROM plugin WHERE id = '$strplug';\n";
 print "DELETE FROM plugin_sid where plugin_id = '$strplug';\n";
 print "DELETE FROM software_cpe where plugin = '$strplugNm:$strplug';\n";
 print "INSERT IGNORE INTO software_cpe (cpe, name, version, line, vendor, plugin) VALUES ('cpe:/o:$strVend:$strMod:$strVer','$strMod','$strVer','','$strVend','$strplugNm:$strplug');\n";
-print "INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES ('$strplug',1,'$strplugNm','$strplugNm','$strDevId','$strVend');\n";
+print "INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES ('$strplug',1,'$strMod','$strVer','$strDevId','$strVend');\n";
 
 my $translate_table = "[translation]\n";
 foreach my $line (@text) {
@@ -58,7 +58,7 @@ foreach my $line (@text) {
 	}
 	$message =~ s/\.//g;
 	$message =~ s/^\ //;
-	$message2 = $strVend . $strMod . $message;
+	$message2 = $strVend . - . $strMod . : . $message;
 	$sid = hex($code);
 	printf $sql_out, $sid, $priority, $message;
 	
