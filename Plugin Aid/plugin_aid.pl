@@ -29,7 +29,7 @@ my $default_r = 3;
 my $default_p = 1;
 
 #filename
-my $file = 'sid.txt';
+my $file = 'one1.txt';
 
 my @text = read_file($file);
 
@@ -40,11 +40,7 @@ $datestring = localtime();
 
 my $sql_out = "INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES ($strplug, %s, $default_r, %s, '%s');\n";
 #Print Header
-print "DELETE FROM plugin WHERE id = '$strplug';\n";
-print "DELETE FROM plugin_sid where plugin_id = '$strplug';\n";
-print "DELETE FROM software_cpe where plugin = '$strplugNm:$strplug';\n";
-print "INSERT IGNORE INTO software_cpe (cpe, name, version, line, vendor, plugin) VALUES ('cpe:/o:$strVend:$strMod:$strVer','$strMod','$strVer','','$strVend','$strplugNm:$strplug');\n";
-print "INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES ('$strplug',1,'$strplugNm','$strplugNm','$strDevId','$strVend');\n";
+
 
 my $translate_table = "[translation]\n";
 foreach my $line (@text) {
@@ -64,8 +60,15 @@ foreach my $line (@text) {
 	
 	#This plugin needs a translate table, going to do that in this loop
 	$translate_table .= "$code=$message\n";
+	$sido .= "INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES ($plugin_id, $code, $default_r, 1, '$message');\n";
 }
-print $translate_table;
+#print $translate_table;
+print "DELETE FROM plugin WHERE id = '$strplug';\n";
+print "DELETE FROM plugin_sid where plugin_id = '$strplug';\n";
+print "DELETE FROM software_cpe where plugin = '$strplugNm:$strplug';\n";
+print "INSERT IGNORE INTO software_cpe (cpe, name, version, line, vendor, plugin) VALUES ('cpe:/o:$strVend:$strMod:$strVer','$strMod','$strVer','','$strVend','$strplugNm:$strplug');\n";
+print "INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES ('$strplug',1,'$strplugNm','$strplugNm','$strDevId','$strVend');\n";
+print $sido;
 
 sub make_plugin () {
 	print <<EOF
@@ -94,6 +97,10 @@ restart=yes  ; restart plugin process after each interval
 restart_interval=180
 startup=
 shutdown=
+
+
+print $translate_table;
+
 EOF
 }
 make_plugin();
