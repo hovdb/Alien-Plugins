@@ -2,7 +2,7 @@ DELETE FROM plugin WHERE id = '9444';
 DELETE FROM plugin_sid where plugin_id = '9444';
 DELETE FROM software_cpe where plugin = 'watchguard_x:9444';
 INSERT IGNORE INTO software_cpe (cpe, name, version, line, vendor, plugin) VALUES ('cpe:/o:Watchguard:xtm-330:11.9.5','XTM-330','11.9.5','','Watchguard','watchguard_x:9444');
-INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES ('9444',1,'xxx','-','10','Watchguard');
+INSERT IGNORE INTO plugin (id, type, name, description, product_type, vendor) VALUES ('9444',1,'xtm-330','11.9.5','10','Watchguard');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9444, 1, 3, 1, 'Watchguard-xxx: Allow');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9444, 2, 3, 1, 'Watchguard-xxx: Deny');
 INSERT INTO `plugin_sid` (`plugin_id`,`sid`,`reliability`, `priority`, `name`) VALUES (9444, 3, 3, 1, 'Watchguard-xxx: dhcpd');
