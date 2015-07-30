@@ -75,11 +75,13 @@ sub make_plugin () {
 	print <<EOF
 # Alienvault plugin
 # Author: hovdb
-# Plugin $strplugNm id:$strplug version: 0.01
-# Accepted products:
-# $strVend - $strMod $strVer
+# Plugin $strplugNm id:$strplug version: $strVer
 # Last modification: $datestring
-
+#
+# Plugin Selection Info:
+# $strVend:$strMod:$strVer
+#
+# END-HEADER
 
 [DEFAULT]
 plugin_id=$strplug
